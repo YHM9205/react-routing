@@ -15,19 +15,18 @@ function StudentsList() {
 
   return (
     <div>
+      <h1>Students Details</h1>
       {students.map((oneStudent) => (
         <div key={oneStudent._id}>
-          <p>Name: {oneStudent.name}</p>
-          <Link to={`/students/${oneStudent._id}`}>Go to Student Details</Link>
+          <h2>name: {oneStudent.name}</h2>
+          <h2>course: {oneStudent.course}</h2>
+          <Link to={`/students/${oneStudent._id}`}>See more about {oneStudent.name}</Link>
         </div>
       ))}
+
     </div>
   )
+
 }
 
 export default StudentsList
-
-
-// 1. send GET request to api
-// 2. set the state to the response from api
-// 3. map through all the students to show to the user
