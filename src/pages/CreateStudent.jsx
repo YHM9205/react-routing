@@ -23,7 +23,13 @@ function CreateStudent() {
     setIsSubmitting(true)
     try {
       await axios.post(`${import.meta.env.VITE_API_URL}/students`, formData)
-      navigate('/students')
+      navigate('/students') // navegait is redirecting user to /students page after the student is created 
+      //this happens in the browser without refreshing the page
+      //in react we can control the navigation programmatically 
+      //useNavigate is a hook that is used to navigate programmatically
+      //we can use it to navigate to any page we want
+      // to arabic copy?
+
     } catch (error) {
       console.error('Error creating student:', error)
     } finally {
